@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,18 +18,15 @@
       background: #fafafa;
     }
 
-    h1 {
-      font-size: 30px;
-      line-height: 1.5;
-    }
-
-    .site-title {
-      color: #666;
-      font-size: 14px;
-    }
-
     .content {
-      margin-top: 36px;
+      margin-top: 20px;
+      font-size: 16px;
+      line-height: 2;
+      overflow-wrap: anywhere;
+    }
+
+    #paper {
+      white-space: pre-wrap;
     }
 
     .back {
@@ -36,19 +34,26 @@
       margin-top: 40px;
       color: #1769aa;
       text-decoration: none;
+      font-size: 14px;
     }
 
     .back:hover {
       text-decoration: underline;
     }
 
+    .loading {
+      color: #777;
+      font-size: 14px;
+    }
+
     @media (max-width: 600px) {
       body {
-        margin-top: 35px;
+        margin-top: 30px;
+        padding: 0 18px;
       }
 
-      h1 {
-        font-size: 25px;
+      .content {
+        font-size: 16px;
       }
     }
   </style>
@@ -56,17 +61,30 @@
 
 <body>
 
-  <header>
-    <p class="site-title">混合共和宪政模型讨论</p>
-    <hr>
-    <h1>第一部分</h1>
-  </header>
-
   <main class="content">
-    <p>本部分正文尚未发布。</p>
+    <article id="paper">
+      <p class="loading">正在加载正文……</p>
+    </article>
   </main>
 
   <a class="back" href="index.html">← 返回论文目录</a>
+
+  <script>
+    fetch("part1.txt")
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("正文文件读取失败");
+        }
+        return response.text();
+      })
+      .then(text => {
+        document.getElementById("paper").textContent = text;
+      })
+      .catch(() => {
+        document.getElementById("paper").textContent =
+          "正文加载失败，请稍后刷新页面";
+      });
+  </script>
 
 </body>
 </html>
