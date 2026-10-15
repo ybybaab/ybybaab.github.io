@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>这是一个论文展览的静态网址</title>
+  <title>个人文章与思想档案</title>
 
   <style>
     body {
@@ -33,6 +33,7 @@
     .description {
       margin-top: 28px;
       font-size: 16px;
+      color: #444;
     }
 
     .status {
@@ -53,55 +54,100 @@
 
     h2 {
       margin-top: 32px;
+      margin-bottom: 12px;
       font-size: 23px;
     }
 
-    .chapter {
-      padding: 16px 0;
+    /* 文章卡片 */
+
+    .article {
+      padding: 20px 0;
       border-bottom: 1px solid #e5e5e5;
     }
 
-    .chapter a {
+    .article:last-child {
+      border-bottom: none;
+    }
+
+    .article a {
       color: #222;
       text-decoration: none;
-      font-size: 17px;
+      font-size: 20px;
       font-weight: 600;
     }
 
-    .chapter a:hover {
+    .article a:hover {
       color: #1769aa;
     }
 
-    .chapter p {
-      margin: 5px 0 0;
-      color: #666;
-      font-size: 14px;
+    .article-meta {
+      margin-top: 4px;
+      color: #888;
+      font-size: 13px;
     }
 
-    /* 读者讨论区 */
-    .discussion {
-      margin-top: 38px;
+    .article-description {
+      margin: 8px 0 0;
+      color: #555;
+      font-size: 15px;
+    }
+
+    .article-action {
+      display: inline-block;
+      margin-top: 10px;
+      color: #1769aa;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .article-action:hover {
+      text-decoration: underline;
+    }
+
+    /* 论文内部结构 */
+
+    .subarticles {
+      margin-top: 14px;
+      padding-left: 18px;
+      border-left: 2px solid #e5e5e5;
+    }
+
+    .subarticles a {
+      display: block;
+      margin: 5px 0;
+      color: #555;
+      font-size: 14px;
+      font-weight: normal;
+    }
+
+    .subarticles a:hover {
+      color: #1769aa;
+    }
+
+    /* 公共区域 */
+
+    .site-section {
+      margin-top: 42px;
       padding: 24px;
       border: 1px solid #e2e2e2;
       border-radius: 8px;
       background: #fff;
     }
 
-    .discussion h2 {
+    .site-section h2 {
       margin-top: 0;
-      margin-bottom: 12px;
     }
 
-    .discussion p {
+    .site-section p {
       color: #555;
       font-size: 15px;
     }
 
-    .discussion-links {
+    .links {
       margin-top: 18px;
     }
 
-    .discussion-links a {
+    .links a {
       display: inline-block;
       margin: 6px 8px 6px 0;
       padding: 8px 14px;
@@ -113,16 +159,10 @@
       background: #fafafa;
     }
 
-    .discussion-links a:hover {
+    .links a:hover {
       border-color: #1769aa;
       color: #1769aa;
       background: #f2f8fc;
-    }
-
-    .discussion-note {
-      margin-top: 16px;
-      color: #888 !important;
-      font-size: 13px !important;
     }
 
     footer {
@@ -142,7 +182,7 @@
         font-size: 27px;
       }
 
-      .discussion {
+      .site-section {
         padding: 18px;
       }
     }
@@ -151,79 +191,157 @@
 
 <body>
 
+  <!-- 网站标题 -->
+
   <header>
-    <h1>野心对抗野心</h1>
+
+    <h1>个人文章与思想档案</h1>
 
     <p class="subtitle">
-      Ambition meets ambition and Discussion on the mixed republican constitutional model
+      Personal archive of articles, essays and research
     </p>
 
     <p class="description">
-      一项关于制度设计、权力制衡与宪政运行机制的研究。
+      这里记录我的论文、文章、随笔与其他长期写作。
+      不同主题的文字将在这里持续整理与发布。
     </p>
 
-    <span class="status">状态：网站建设中</span>
+    <span class="status">持续更新中</span>
+
   </header>
 
   <hr>
 
+
+  <!-- =========================
+       文章区域
+       ========================= -->
+
   <main>
-    <h2>论文目录</h2>
 
-    <section class="chapter">
-      <a href="part1.html">第一部分</a>
-      <p>点击阅读本部分正文。</p>
-    </section>
+    <h2>文章与作品</h2>
 
-    <section class="chapter">
-      <a href="part2.html">第二部分</a>
-      <p>点击阅读本部分正文。</p>
-    </section>
 
-    <section class="chapter">
-      <a href="part3.html">第三部分</a>
-      <p>点击阅读本部分正文。</p>
-    </section>
+    <!-- 第一篇：原有论文 -->
 
-    <section class="chapter">
-      <a href="part4.html">第四部分</a>
-      <p>点击阅读本部分正文。</p>
-    </section>
+    <article class="article">
 
-    <section class="chapter">
-      <a href="part5.html">第五部分</a>
-      <p>点击阅读本部分正文。</p>
-    </section>
+      <a href="part1.html">
+        野心对抗野心
+      </a>
 
-    <!-- 读者讨论区 -->
-    <section class="discussion">
-      <h2>读者讨论区</h2>
-
-      <p>
-        本文欢迎批评、质疑与建设性讨论。
-        无论是对理论模型的反对、对制度设计的疑问，
-        还是对论证过程的质疑，都欢迎在这里交流。
-      </p>
-
-      <div class="discussion-links">
-        <a href="https://github.com/ybybaab/ybybaab.github.io/discussions"
-           target="_blank"
-           rel="noopener noreferrer">
-          💬 进入公共讨论区 →
-        </a>
+      <div class="article-meta">
+        论文 · 2026
       </div>
 
-      <p class="discussion-note">
-        讨论区由 GitHub Discussions 提供。
-        参与讨论需要使用 GitHub 账号。
+      <p class="article-description">
+        混合共和宪政模型讨论。
+        一项关于制度设计、权力制衡与宪政运行机制的研究。
       </p>
-    </section>
+
+      <a class="article-action" href="part1.html">
+        阅读全文 →
+      </a>
+
+      <div class="subarticles">
+
+        <a href="part1.html">
+          第一部分
+        </a>
+
+        <a href="part2.html">
+          第二部分
+        </a>
+
+        <a href="part3.html">
+          第三部分
+        </a>
+
+        <a href="part4.html">
+          第四部分
+        </a>
+
+        <a href="part5.html">
+          第五部分
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!--
+      以后增加新的文章时，
+      可以在这里继续添加 <article class="article">。
+    -->
+
 
   </main>
 
+
+  <!-- =========================
+       关于本站
+       ========================= -->
+
+  <section class="site-section">
+
+    <h2>关于本站</h2>
+
+    <p>
+      这是一个个人文章与思想档案网站。
+      这里用于保存和展示个人长期写作、研究与思考。
+    </p>
+
+    <p>
+      网站内容可能涉及政治、社会、技术、历史以及其他个人感兴趣的主题。
+    </p>
+
+  </section>
+
+
+  <!-- =========================
+       公共讨论区
+       ========================= -->
+
+  <section class="site-section">
+
+    <h2>公共讨论区</h2>
+
+    <p>
+      欢迎对本站文章提出意见、批评与质疑。
+      如果你希望针对文章内容进行讨论，可以进入公共讨论区。
+    </p>
+
+    <div class="links">
+
+      <a
+        href="https://github.com/ybybaab/ybybaab.github.io/discussions"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        💬 进入公共讨论区 →
+      </a>
+
+    </div>
+
+    <p style="margin-top: 14px; color: #888; font-size: 13px;">
+      讨论区由 GitHub Discussions 提供。
+      参与讨论需要使用 GitHub 账号。
+    </p>
+
+  </section>
+
+
+  <!-- =========================
+       页脚
+       ========================= -->
+
   <footer>
-    混合共和宪政模型讨论
+
+    个人文章与思想档案
+
   </footer>
+
 
 </body>
 </html>
