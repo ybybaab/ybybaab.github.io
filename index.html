@@ -78,6 +78,53 @@
       font-size: 14px;
     }
 
+    /* 读者讨论区 */
+    .discussion {
+      margin-top: 38px;
+      padding: 24px;
+      border: 1px solid #e2e2e2;
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .discussion h2 {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .discussion p {
+      color: #555;
+      font-size: 15px;
+    }
+
+    .discussion-links {
+      margin-top: 18px;
+    }
+
+    .discussion-links a {
+      display: inline-block;
+      margin: 6px 8px 6px 0;
+      padding: 8px 14px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      color: #333;
+      text-decoration: none;
+      font-size: 14px;
+      background: #fafafa;
+    }
+
+    .discussion-links a:hover {
+      border-color: #1769aa;
+      color: #1769aa;
+      background: #f2f8fc;
+    }
+
+    .discussion-note {
+      margin-top: 16px;
+      color: #888 !important;
+      font-size: 13px !important;
+    }
+
     footer {
       margin-top: 45px;
       padding-top: 16px;
@@ -93,6 +140,10 @@
 
       h1 {
         font-size: 27px;
+      }
+
+      .discussion {
+        padding: 18px;
       }
     }
   </style>
@@ -120,29 +171,54 @@
     <h2>论文目录</h2>
 
     <section class="chapter">
-  <a href="part1.html">第一部分</a>
-  <p>点击阅读本部分正文。</p>
+      <a href="part1.html">第一部分</a>
+      <p>点击阅读本部分正文。</p>
     </section>
 
     <section class="chapter">
-  <a href="part2.html">第二部分</a>
-  <p>点击阅读本部分正文。</p>
+      <a href="part2.html">第二部分</a>
+      <p>点击阅读本部分正文。</p>
     </section>
 
     <section class="chapter">
-  <a href="part3.html">第三部分</a>
-  <p>点击阅读本部分正文。</p>
+      <a href="part3.html">第三部分</a>
+      <p>点击阅读本部分正文。</p>
     </section>
 
     <section class="chapter">
-  <a href="part4.html">第四部分</a>
-  <p>点击阅读本部分正文。</p>
+      <a href="part4.html">第四部分</a>
+      <p>点击阅读本部分正文。</p>
     </section>
 
     <section class="chapter">
-  <a href="part5.html">第五部分</a>
-  <p>点击阅读本部分正文。</p>
+      <a href="part5.html">第五部分</a>
+      <p>点击阅读本部分正文。</p>
     </section>
+
+    <!-- 读者讨论区 -->
+    <section class="discussion">
+      <h2>读者讨论区</h2>
+
+      <p>
+        本文欢迎批评、质疑与建设性讨论。
+        无论是对理论模型的反对、对制度设计的疑问，
+        还是对论证过程的质疑，都欢迎在这里交流。
+      </p>
+
+      <div class="discussion-links">
+        <a href="https://github.com/ybybaab/ybybaab.github.io/discussions"
+           target="_blank"
+           rel="noopener noreferrer">
+          💬 进入公共讨论区 →
+        </a>
+      </div>
+
+      <p class="discussion-note">
+        讨论区由 GitHub Discussions 提供。
+        参与讨论需要使用 GitHub 账号。
+      </p>
+    </section>
+
   </main>
 
   <footer>
