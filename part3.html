@@ -1,48 +1,91 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>第三部分｜混合共和宪政模型讨论</title>
-    <style>
-        body {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-            font-family: sans-serif;
-            line-height: 1.8;
-            color: #222;
-            background: #fff;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        h1 {
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 12px;
-        }
+  <title>第三部分｜混合共和宪政模型讨论</title>
 
-        .content {
-            margin-top: 30px;
-        }
+  <style>
+    body {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 24px;
+      font-family: Arial, "Microsoft YaHei", sans-serif;
+      line-height: 2;
+      color: #222;
+      background: #fafafa;
+    }
 
-        a {
-            color: #2457a7;
-            text-decoration: none;
-        }
+    .content {
+      margin-top: 20px;
+      font-size: 16px;
+      line-height: 2;
+      overflow-wrap: anywhere;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    #paper {
+      white-space: pre-wrap;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 40px;
+      color: #1769aa;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .back:hover {
+      text-decoration: underline;
+    }
+
+    .loading {
+      color: #777;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        margin-top: 30px;
+        padding: 0 18px;
+      }
+
+      .content {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <h1>第三部分</h1>
+  <main class="content">
+    <article id="paper">
+      <p class="loading">正在加载正文……</p>
+    </article>
+  </main>
 
-    <div class="content">
-        <p>本部分正文尚未发布。</p>
-    </div>
+  <a class="back" href="index.html">← 返回论文目录</a>
 
-    <p><a href="index.html">← 返回论文目录</a></p>
+  <script>
+    fetch("part3.txt")
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("正文文件读取失败");
+        }
+
+        return response.text();
+      })
+      .then(text => {
+        document.getElementById("paper").textContent = text;
+      })
+      .catch(() => {
+        document.getElementById("paper").textContent =
+          "正文加载失败，请稍后刷新页面，或检查 part3.txt 文件是否存在。";
+      });
+  </script>
 
 </body>
 </html>
