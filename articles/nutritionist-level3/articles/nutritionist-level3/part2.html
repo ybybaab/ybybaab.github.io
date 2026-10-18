@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>公共营养师（三级）考试要点全面总结——下篇</title>
+  <style>
+    body {
+      max-width: 850px;
+      margin: 40px auto;
+      padding: 0 22px;
+      font-family: Arial, "Microsoft YaHei", sans-serif;
+      line-height: 1.9;
+      color: #222;
+      background: #fafafa;
+    }
+    h1 {
+      line-height: 1.5;
+    }
+    .nav {
+      margin: 20px 0;
+      padding: 14px;
+      background: #f0f4f8;
+      border-radius: 8px;
+    }
+    .nav a {
+      margin-right: 16px;
+      color: #1769aa;
+      text-decoration: none;
+    }
+    #content {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      font-size: 16px;
+    }
+    .error {
+      color: #b42318;
+      padding: 12px;
+      border: 1px solid #f0b8b4;
+      border-radius: 6px;
+      background: #fff5f4;
+    }
+    footer {
+      margin-top: 40px;
+      padding-top: 16px;
+      border-top: 1px solid #ddd;
+      color: #777;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <p><a href="index.html">← 返回论文目录</a></p>
+
+  <h1>公共营养师（三级）考试要点全面总结</h1>
+  <h2>下篇：营养评价与专业技能</h2>
+
+  <div class="nav">
+    <a href="index.html">论文目录</a>
+    <a href="part1.html">← 阅读上篇</a>
+    <a href="../../index.html">网站首页</a>
+  </div>
+
+  <main id="content">正在加载正文……</main>
+
+  <footer>
+    公共营养师（三级）考试要点全面总结 · 下篇
+  </footer>
+
+  <script>
+    fetch("part2.txt")
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("正文文件暂时无法读取");
+        }
+        return response.text();
+      })
+      .then(text => {
+        document.getElementById("content").textContent = text;
+      })
+      .catch(() => {
+        document.getElementById("content").innerHTML =
+          '<p class="error">正文加载失败。请检查 part2.txt 是否已经上传到当前目录，并确认文件名拼写正确。</p>';
+      });
+  </script>
+
+</body>
+</html>
