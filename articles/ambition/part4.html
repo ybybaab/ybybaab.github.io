@@ -29,15 +29,22 @@
       white-space: pre-wrap;
     }
 
-    .back {
-      display: inline-block;
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
       margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+    }
+
+    .navigation a {
       color: #1769aa;
       text-decoration: none;
       font-size: 14px;
     }
 
-    .back:hover {
+    .navigation a:hover {
       text-decoration: underline;
     }
 
@@ -55,6 +62,11 @@
       .content {
         font-size: 16px;
       }
+
+      .navigation {
+        flex-direction: column;
+        gap: 10px;
+      }
     }
   </style>
 </head>
@@ -67,7 +79,11 @@
     </article>
   </main>
 
-  <a class="back" href="index.html">← 返回论文目录</a>
+  <nav class="navigation">
+    <a href="part3.html">← 第三部分</a>
+    <a href="index.html">返回论文目录</a>
+    <a href="part5.html">前往第五部分 →</a>
+  </nav>
 
   <script>
     fetch("part4.txt")
@@ -75,7 +91,6 @@
         if (!response.ok) {
           throw new Error("正文文件读取失败");
         }
-
         return response.text();
       })
       .then(text => {
@@ -83,7 +98,7 @@
       })
       .catch(() => {
         document.getElementById("paper").textContent =
-          "正文加载失败，请稍后刷新页面，或检查 part4.txt 文件是否存在。";
+          "正文加载失败，请稍后刷新页面";
       });
   </script>
 
